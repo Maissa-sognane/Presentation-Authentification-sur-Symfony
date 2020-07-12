@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <h1>Bienvenue {{ user.username }}</h1>
+
+    {% if is_granted('ROLE_ADMIN') %}
+    <a href="{{ path('delete') }}">
+        <button type="button" class="btn btn-danger">
+            Delete etudiant
+        </button>
+    </a>
+    {% endif %}
+
+{% endblock %}
